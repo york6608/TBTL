@@ -1,0 +1,108 @@
+{
+  "products": [
+    {
+      "id": "portland-cement-42-5",
+      "category": "cement",
+      "image": "/assets/images/placeholder.svg",
+      "featured": true,
+      "name": { "en": "Portland Cement 42.5N", "sw": "Saruji Portland 42.5N" },
+      "desc": {
+        "en": "High-strength Portland cement ideal for concrete, foundations and structural work.",
+        "sw": "Saruji Portland yenye nguvu kwa zege, misingi na kazi za muundo."
+      },
+      "spec": "50kg / bag",
+      "price": "TZS 18,000"
+    },
+    {
+      "id": "river-sand",
+      "category": "cement",
+      "image": "/assets/images/placeholder.svg",
+      "featured": false,
+      "name": { "en": "River Sand", "sw": "Mchanga wa Mto" },
+      "desc": {
+        "en": "Clean, screened river sand for plastering and concrete mixing.",
+        "sw": "Mchanga safi wa mto kwa kupaka na kuchanganya zege."
+      },
+      "spec": "per tonne",
+      "price": ""
+    },
+    {
+      "id": "deformed-rebar-12mm",
+      "category": "steel",
+      "image": "/assets/images/placeholder.svg",
+      "featured": true,
+      "name": { "en": "Deformed Rebar 12mm", "sw": "Nondo 12mm" },
+      "desc": {
+        "en": "Grade 60 deformed steel bar for reinforced concrete structures.",
+        "sw": "Nondo ya chuma daraja 60 kwa miundo ya zege iliyoimarishwa."
+      },
+      "spec": "12mm x 12m",
+      "price": "TZS 16,500"
+    },
+    {
+      "id": "iron-sheet-gauge28",
+      "category": "roofing",
+      "image": "/assets/images/placeholder.svg",
+      "featured": true,
+      "name": { "en": "Corrugated Iron Sheet G28", "sw": "Bati la Mabati G28" },
+      "desc": {
+        "en": "Durable galvanized corrugated roofing sheet, rust resistant.",
+        "sw": "Bati la kudumu lililopakwa zinki, halishiki kutu."
+      },
+      "spec": "Gauge 28 / 3m",
+      "price": "TZS 22,000"
+    },
+    {
+      "id": "ppr-pipe-20mm",
+      "category": "plumbing",
+      "image": "/assets/images/placeholder.svg",
+      "featured": false,
+      "name": { "en": "PPR Water Pipe 20mm", "sw": "Bomba la Maji PPR 20mm" },
+      "desc": {
+        "en": "Heat-fusion PPR pipe for hot and cold water supply.",
+        "sw": "Bomba la PPR kwa maji ya moto na baridi."
+      },
+      "spec": "20mm / 4m",
+      "price": ""
+    },
+    {
+      "id": "electrical-cable-2-5",
+      "category": "electrical",
+      "image": "/assets/images/placeholder.svg",
+      "featured": false,
+      "name": { "en": "Copper Cable 2.5mm2", "sw": "Waya wa Shaba 2.5mm2" },
+      "desc": {
+        "en": "Single-core copper electrical cable for house wiring.",
+        "sw": "Waya wa shaba kwa uwekaji umeme wa nyumba."
+      },
+      "spec": "100m roll",
+      "price": ""
+    },
+    {
+      "id": "emulsion-paint-20l",
+      "category": "paint",
+      "image": "/assets/images/placeholder.svg",
+      "featured": true,
+      "name": { "en": "Emulsion Paint 20L", "sw": "Rangi ya Emulsion 20L" },
+      "desc": {
+        "en": "Smooth interior and exterior wall emulsion paint, wide color range.",
+        "sw": "Rangi laini ya kuta za ndani na nje, rangi mbalimbali."
+      },
+      "spec": "20 litre",
+      "price": "TZS 65,000"
+    },
+    {
+      "id": "cordless-drill",
+      "category": "tools",
+      "image": "/assets/images/placeholder.svg",
+      "featured": false,
+      "name": { "en": "Cordless Drill 18V", "sw": "Drili ya Betri 18V" },
+      "desc": {
+        "en": "Rechargeable cordless drill with variable speed and battery pack.",
+        "sw": "Drili ya betri inayochajika yenye kasi tofauti na betri."
+      },
+      "spec": "18V + 2 batteries",
+      "price": ""
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "categories": [
+    { "id": "cement", "name": { "en": "Cement & Aggregates", "sw": "Saruji na Kokoto" } },
+    { "id": "steel", "name": { "en": "Steel & Rebar", "sw": "Chuma na Nondo" } },
+    { "id": "roofing", "name": { "en": "Roofing", "sw": "Mabati na Paa" } },
+    { "id": "plumbing", "name": { "en": "Plumbing", "sw": "Mabomba na Maji" } },
+    { "id": "electrical", "name": { "en": "Electrical", "sw": "Umeme" } },
+    { "id": "paint", "name": { "en": "Paint & Finishing", "sw": "Rangi na Umaliziaji" } },
+    { "id": "tools", "name": { "en": "Tools & Hardware", "sw": "Zana na Hardware" } }
+  ]
+}

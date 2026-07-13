@@ -1,0 +1,225 @@
+# ============================================================
+#  Visual admin configuration (Sveltia CMS / Decap CMS format)
+#  IMPORTANT: change the `repo` line below to YOUR GitHub repo
+#  e.g.  repo: yourname/uzalendo-hardware
+# ============================================================
+backend:
+  name: github
+  repo: york6608/TBTL
+  branch: main
+
+# Where uploaded photos are stored / how they are referenced on the site
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+# Keep JSON readable and stable
+slug:
+  encoding: "ascii"
+  clean_accents: true
+
+collections:
+  # ---------------------------------------------------------
+  # 1) Company info + homepage text
+  # ---------------------------------------------------------
+  - name: "settings"
+    label: "Company & Homepage"
+    files:
+      - name: "site"
+        label: "Company Information"
+        file: "data/site.json"
+        fields:
+          - { label: "Company name", name: "companyName", widget: "string" }
+          - { label: "Logo text", name: "logoText", widget: "string" }
+          - { label: "Brand color (main)", name: "brandColor", widget: "color", enableAlpha: false, required: false }
+          - { label: "Brand color (dark)", name: "brandColorDark", widget: "color", enableAlpha: false, required: false }
+          - label: "Default language"
+            name: "defaultLang"
+            widget: "select"
+            options: [ { label: "English", value: "en" }, { label: "Kiswahili", value: "sw" } ]
+            default: "en"
+
+          - label: "Hero (top banner)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - label: "Title"
+                name: "title"
+                widget: "object"
+                fields:
+                  - { label: "English", name: "en", widget: "string" }
+                  - { label: "Kiswahili", name: "sw", widget: "string" }
+              - label: "Subtitle"
+                name: "subtitle"
+                widget: "object"
+                fields:
+                  - { label: "English", name: "en", widget: "text" }
+                  - { label: "Kiswahili", name: "sw", widget: "text" }
+
+          - label: "About section"
+            name: "about"
+            widget: "object"
+            fields:
+              - label: "Title"
+                name: "title"
+                widget: "object"
+                fields:
+                  - { label: "English", name: "en", widget: "string" }
+                  - { label: "Kiswahili", name: "sw", widget: "string" }
+              - label: "Body text"
+                name: "body"
+                widget: "object"
+                fields:
+                  - { label: "English", name: "en", widget: "text" }
+                  - { label: "Kiswahili", name: "sw", widget: "text" }
+              - label: "Highlights (why choose us)"
+                name: "highlights"
+                widget: "list"
+                label_singular: "Highlight"
+                fields:
+                  - label: "Icon"
+                    name: "icon"
+                    widget: "select"
+                    options: [ "shield", "tag", "truck" ]
+                    default: "shield"
+                  - label: "Title"
+                    name: "title"
+                    widget: "object"
+                    fields:
+                      - { label: "English", name: "en", widget: "string" }
+                      - { label: "Kiswahili", name: "sw", widget: "string" }
+                  - label: "Text"
+                    name: "text"
+                    widget: "object"
+                    fields:
+                      - { label: "English", name: "en", widget: "string" }
+                      - { label: "Kiswahili", name: "sw", widget: "string" }
+
+          - label: "Products section heading"
+            name: "products"
+            widget: "object"
+            fields:
+              - label: "Title"
+                name: "title"
+                widget: "object"
+                fields:
+                  - { label: "English", name: "en", widget: "string" }
+                  - { label: "Kiswahili", name: "sw", widget: "string" }
+              - label: "Subtitle"
+                name: "subtitle"
+                widget: "object"
+                fields:
+                  - { label: "English", name: "en", widget: "string" }
+                  - { label: "Kiswahili", name: "sw", widget: "string" }
+              - label: "\"All\" filter label"
+                name: "allLabel"
+                widget: "object"
+                fields:
+                  - { label: "English", name: "en", widget: "string" }
+                  - { label: "Kiswahili", name: "sw", widget: "string" }
+
+          - label: "Contact"
+            name: "contact"
+            widget: "object"
+            fields:
+              - label: "Title"
+                name: "title"
+                widget: "object"
+                fields:
+                  - { label: "English", name: "en", widget: "string" }
+                  - { label: "Kiswahili", name: "sw", widget: "string" }
+              - label: "Subtitle"
+                name: "subtitle"
+                widget: "object"
+                fields:
+                  - { label: "English", name: "en", widget: "string" }
+                  - { label: "Kiswahili", name: "sw", widget: "string" }
+              - { label: "Phone", name: "phone", widget: "string" }
+              - { label: "WhatsApp number (digits only, e.g. 255700000000)", name: "whatsapp", widget: "string" }
+              - { label: "Email", name: "email", widget: "string", required: false }
+              - label: "Address"
+                name: "address"
+                widget: "object"
+                fields:
+                  - { label: "English", name: "en", widget: "string" }
+                  - { label: "Kiswahili", name: "sw", widget: "string" }
+              - label: "Opening hours"
+                name: "hours"
+                widget: "object"
+                fields:
+                  - { label: "English", name: "en", widget: "string" }
+                  - { label: "Kiswahili", name: "sw", widget: "string" }
+              - { label: "Google Map embed URL", name: "mapEmbed", widget: "string", required: false }
+
+          - label: "Social links"
+            name: "social"
+            widget: "object"
+            required: false
+            fields:
+              - { label: "Facebook URL", name: "facebook", widget: "string", required: false }
+              - { label: "Instagram URL", name: "instagram", widget: "string", required: false }
+              - { label: "TikTok URL", name: "tiktok", widget: "string", required: false }
+
+  # ---------------------------------------------------------
+  # 2) Product categories
+  # ---------------------------------------------------------
+  - name: "catalog"
+    label: "Product Categories"
+    files:
+      - name: "categories"
+        label: "Categories"
+        file: "data/categories.json"
+        fields:
+          - label: "Categories"
+            name: "categories"
+            widget: "list"
+            label_singular: "Category"
+            fields:
+              - { label: "ID (no spaces, e.g. cement)", name: "id", widget: "string" }
+              - label: "Name"
+                name: "name"
+                widget: "object"
+                fields:
+                  - { label: "English", name: "en", widget: "string" }
+                  - { label: "Kiswahili", name: "sw", widget: "string" }
+
+  # ---------------------------------------------------------
+  # 3) Products
+  # ---------------------------------------------------------
+  - name: "products"
+    label: "Products"
+    files:
+      - name: "products"
+        label: "Product List"
+        file: "data/products.json"
+        fields:
+          - label: "Products"
+            name: "products"
+            widget: "list"
+            label_singular: "Product"
+            summary: "{{fields.name.en}}"
+            fields:
+              - { label: "ID (no spaces, unique)", name: "id", widget: "string" }
+              - label: "Category"
+                name: "category"
+                widget: "relation"
+                collection: "catalog"
+                file: "categories"
+                search_fields: [ "categories.*.name.en", "categories.*.id" ]
+                value_field: "categories.*.id"
+                display_fields: [ "categories.*.name.en" ]
+              - { label: "Photo", name: "image", widget: "image", required: false, default: "/assets/images/placeholder.svg" }
+              - { label: "Featured (show badge)", name: "featured", widget: "boolean", default: false }
+              - label: "Name"
+                name: "name"
+                widget: "object"
+                fields:
+                  - { label: "English", name: "en", widget: "string" }
+                  - { label: "Kiswahili", name: "sw", widget: "string" }
+              - label: "Description"
+                name: "desc"
+                widget: "object"
+                fields:
+                  - { label: "English", name: "en", widget: "text" }
+                  - { label: "Kiswahili", name: "sw", widget: "text" }
+              - { label: "Specification / model", name: "spec", widget: "string", required: false }
+              - { label: "Price (leave empty for \"on request\")", name: "price", widget: "string", required: false }
