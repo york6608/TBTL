@@ -7,8 +7,7 @@ backend:
   name: github
   repo: york6608/TBTL
   branch: main
-  # After deploying the Sveltia CMS auth Worker, paste its URL here, e.g.
-  # base_url: https://sveltia-cms-auth.your-subdomain.workers.dev
+  base_url: https://sveltia-cms-auth.zyq721935271.workers.dev
 
 # Links back to the live site from inside the admin
 site_url: https://tbtltz.com
