@@ -1,6 +1,6 @@
 {
-  "companyName": "Uzalendo Hardware & Building Materials",
-  "logoText": "Uzalendo Hardware",
+  "companyName": "TEN BROTHERS TRADING LIMITED",
+  "logoText": "TBTL",
   "brandColor": "#e2711d",
   "brandColorDark": "#1f3a5f",
   "defaultLang": "en",
@@ -15,7 +15,10 @@
     }
   },
   "about": {
-    "title": { "en": "About Us", "sw": "Kuhusu Sisi" },
+    "title": {
+      "en": "About Us",
+      "sw": "Kuhusu Sisi"
+    },
     "body": {
       "en": "We are a trusted supplier of hardware and building materials based in Tanzania. From foundation to finishing, we stock genuine products for contractors, builders and homeowners at competitive wholesale prices.",
       "sw": "Sisi ni wasambazaji wa kuaminika wa vifaa vya ujenzi na hardware tulioko Tanzania. Kuanzia msingi hadi kumalizia, tunahifadhi bidhaa halisi kwa wakandarasi, wajenzi na wamiliki wa nyumba kwa bei nafuu ya jumla."
@@ -23,38 +26,65 @@
     "highlights": [
       {
         "icon": "shield",
-        "title": { "en": "Genuine Products", "sw": "Bidhaa Halisi" },
-        "text": { "en": "Only authentic, quality-checked materials.", "sw": "Vifaa halisi vilivyokaguliwa ubora tu." }
+        "title": {
+          "en": "Genuine Products",
+          "sw": "Bidhaa Halisi"
+        },
+        "text": {
+          "en": "Only authentic, quality-checked materials.",
+          "sw": "Vifaa halisi vilivyokaguliwa ubora tu."
+        }
       },
       {
         "icon": "tag",
-        "title": { "en": "Wholesale Prices", "sw": "Bei za Jumla" },
-        "text": { "en": "Competitive pricing for projects of any size.", "sw": "Bei nafuu kwa miradi ya ukubwa wowote." }
+        "title": {
+          "en": "Wholesale Prices",
+          "sw": "Bei za Jumla"
+        },
+        "text": {
+          "en": "Competitive pricing for projects of any size.",
+          "sw": "Bei nafuu kwa miradi ya ukubwa wowote."
+        }
       },
       {
         "icon": "truck",
-        "title": { "en": "Fast Delivery", "sw": "Usafirishaji wa Haraka" },
-        "text": { "en": "Delivery across Tanzania, on time.", "sw": "Usafirishaji Tanzania nzima, kwa wakati." }
+        "title": {
+          "en": "Fast Delivery",
+          "sw": "Usafirishaji wa Haraka"
+        },
+        "text": {
+          "en": "Delivery across Tanzania, on time.",
+          "sw": "Usafirishaji Tanzania nzima, kwa wakati."
+        }
       }
     ]
   },
   "products": {
-    "title": { "en": "Our Products", "sw": "Bidhaa Zetu" },
+    "title": {
+      "en": "Our Products",
+      "sw": "Bidhaa Zetu"
+    },
     "subtitle": {
       "en": "Browse our range of building materials and hardware.",
       "sw": "Angalia aina mbalimbali za vifaa vya ujenzi na hardware."
     },
-    "allLabel": { "en": "All", "sw": "Zote" }
+    "allLabel": {
+      "en": "All",
+      "sw": "Zote"
+    }
   },
   "contact": {
-    "title": { "en": "Contact Us", "sw": "Wasiliana Nasi" },
+    "title": {
+      "en": "Contact Us",
+      "sw": "Wasiliana Nasi"
+    },
     "subtitle": {
       "en": "Get a quote or place an order. We are happy to help.",
       "sw": "Pata bei au weka oda. Tuko tayari kukusaidia."
     },
-    "phone": "+255 700 000 000",
-    "whatsapp": "255700000000",
-    "email": "info@uzalendohardware.co.tz",
+    "phone": "+255 752 122 255",
+    "whatsapp": "255752122255",
+    "email": "admin@tbtltz.com",
     "address": {
       "en": "Nyerere Road, Dar es Salaam, Tanzania",
       "sw": "Barabara ya Nyerere, Dar es Salaam, Tanzania"
