@@ -10,7 +10,9 @@
       "modal.enquire": "Enquire on WhatsApp", "footer.rights": "All rights reserved",
       "contact.phone": "Phone", "contact.whatsapp": "WhatsApp", "contact.email": "Email",
       "contact.address": "Address", "contact.hours": "Opening Hours",
-      "product.priceOnRequest": "Price on request", "products.empty": "No products in this category yet."
+      "product.priceOnRequest": "Price on request", "products.empty": "No products in this category yet.",
+      "faq.title": "Frequently Asked Questions", "nav.faq": "FAQ",
+      "seo.titleSuffix": "Hardware & Building Materials in Tanzania"
     },
     sw: {
       "nav.home": "Nyumbani", "nav.about": "Kuhusu", "nav.products": "Bidhaa",
@@ -20,7 +22,9 @@
       "modal.enquire": "Uliza kwa WhatsApp", "footer.rights": "Haki zote zimehifadhiwa",
       "contact.phone": "Simu", "contact.whatsapp": "WhatsApp", "contact.email": "Barua pepe",
       "contact.address": "Anuani", "contact.hours": "Saa za Kazi",
-      "product.priceOnRequest": "Bei kwa ombi", "products.empty": "Hakuna bidhaa katika kundi hili bado."
+      "product.priceOnRequest": "Bei kwa ombi", "products.empty": "Hakuna bidhaa katika kundi hili bado.",
+      "faq.title": "Maswali Yanayoulizwa Mara kwa Mara", "nav.faq": "Maswali",
+      "seo.titleSuffix": "Vifaa vya Ujenzi na Hardware Tanzania"
     }
   };
 
@@ -106,6 +110,22 @@
 
     renderHighlights();
     renderContactList();
+    renderFAQ();
+    updateSEO();
+  }
+
+  function renderFAQ() {
+    var section = byId("faq");
+    var list = byId("faqList");
+    var faqs = state.site.faq || [];
+    byId("faqTitle").textContent = t("faq.title");
+    if (!faqs.length) { if (section) section.style.display = "none"; return; }
+    if (section) section.style.display = "";
+    list.innerHTML = faqs.map(function (f) {
+      return '<details class="faq-item"><summary>' + esc(loc(f.q)) +
+        '<span class="faq-icon" aria-hidden="true"></span></summary>' +
+        '<div class="faq-answer"><p>' + esc(loc(f.a)) + "</p></div></details>";
+    }).join("");
   }
 
   function renderHighlights() {
@@ -232,6 +252,8 @@
   }
 
   function detectLang() {
+    var q = (location.search.match(/[?&]lang=([a-z]{2})/i) || [])[1];
+    if (q && UI[q.toLowerCase()]) return q.toLowerCase();
     var saved;
     try { saved = localStorage.getItem("lang"); } catch (e) {}
     if (saved && UI[saved]) return saved;
@@ -239,6 +261,123 @@
     if (nav.indexOf("sw") === 0) return "sw";
     if (state.site && state.site.defaultLang && UI[state.site.defaultLang]) return state.site.defaultLang;
     return "en";
+  }
+
+  /* ---------- SEO (dynamic meta + structured data) ---------- */
+
+  function setMeta(selector, attr, value) {
+    var el = document.head.querySelector(selector);
+    if (el && value != null) el.setAttribute(attr, value);
+  }
+
+  function updateSEO() {
+    var s = state.site;
+    var name = s.companyName || "TBTL";
+    var title = loc(s.hero.title) + " | " + name;
+    var desc = loc(s.hero.subtitle) || loc(s.about.body);
+    var kw = s.seo && s.seo.keywords ? loc(s.seo.keywords) : "";
+
+    document.title = title;
+    document.documentElement.lang = state.lang;
+    setMeta('meta[name="description"]', "content", desc);
+    if (kw) setMeta('meta[name="keywords"]', "content", kw);
+    setMeta('meta[property="og:title"]', "content", title);
+    setMeta('meta[property="og:description"]', "content", desc);
+    setMeta('meta[name="twitter:title"]', "content", title);
+    setMeta('meta[name="twitter:description"]', "content", desc);
+    setMeta('meta[property="og:locale"]', "content", state.lang === "sw" ? "sw_TZ" : "en_US");
+    setMeta('meta[property="og:locale:alternate"]', "content", state.lang === "sw" ? "en_US" : "sw_TZ");
+  }
+
+  function addLD(id, obj) {
+    var old = document.getElementById(id);
+    if (old) old.remove();
+    var el = document.createElement("script");
+    el.type = "application/ld+json";
+    el.id = id;
+    el.textContent = JSON.stringify(obj);
+    document.head.appendChild(el);
+  }
+
+  function injectStructuredData() {
+    var s = state.site;
+    var base = (s.url || "https://tbtltz.com").replace(/\/$/, "");
+    var name = s.companyName || "TBTL Hardware & Building Materials";
+    var en = function (o) { return o ? (o.en || o.sw || "") : ""; };
+    var digits = String(s.contact.whatsapp || s.contact.phone || "").replace(/[^0-9]/g, "");
+
+    // Refresh the LocalBusiness node with real data from site.json
+    addLD("ld-business", {
+      "@context": "https://schema.org",
+      "@type": "HardwareStore",
+      "@id": base + "/#business",
+      name: name,
+      url: base + "/",
+      image: base + "/assets/images/og-cover.jpg",
+      description: en(s.about.body),
+      telephone: s.contact.phone,
+      email: s.contact.email,
+      priceRange: (s.seo && s.seo.priceRange) || "$$",
+      currenciesAccepted: "TZS",
+      address: { "@type": "PostalAddress", addressLocality: "Dar es Salaam", addressRegion: "Dar es Salaam", addressCountry: "TZ", streetAddress: en(s.contact.address) },
+      geo: s.seo && s.seo.geo ? { "@type": "GeoCoordinates", latitude: s.seo.geo.lat, longitude: s.seo.geo.lng } : undefined,
+      areaServed: ((s.seo && s.seo.areaServed) || ["Tanzania"]).map(function (a) { return { "@type": "AdministrativeArea", name: a }; }),
+      openingHoursSpecification: [{ "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], opens: "08:00", closes: "18:00" }],
+      sameAs: [s.social && s.social.facebook, s.social && s.social.instagram, s.social && s.social.tiktok].filter(Boolean),
+      knowsLanguage: ["en", "sw"],
+      contactPoint: digits ? { "@type": "ContactPoint", telephone: "+" + digits, contactType: "sales", availableLanguage: ["English", "Swahili"] } : undefined
+    });
+
+    // WebSite node
+    addLD("ld-website", {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": base + "/#website",
+      url: base + "/",
+      name: name,
+      inLanguage: ["en", "sw"],
+      publisher: { "@id": base + "/#business" }
+    });
+
+    // Product catalogue as ItemList (helps AI enumerate offerings)
+    if (state.products.length) {
+      addLD("ld-products", {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        name: "Products - " + name,
+        itemListElement: state.products.map(function (p, i) {
+          return {
+            "@type": "ListItem",
+            position: i + 1,
+            item: {
+              "@type": "Product",
+              name: en(p.name),
+              description: en(p.desc),
+              category: catName(p.category),
+              image: p.image ? base + p.image : undefined,
+              brand: { "@type": "Brand", name: name },
+              offers: {
+                "@type": "Offer",
+                priceCurrency: "TZS",
+                availability: "https://schema.org/InStock",
+                seller: { "@id": base + "/#business" }
+              }
+            }
+          };
+        })
+      });
+    }
+
+    // FAQ node (strong signal for AI answers and Google rich results)
+    if (s.faq && s.faq.length) {
+      addLD("ld-faq", {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: s.faq.map(function (f) {
+          return { "@type": "Question", name: en(f.q), acceptedAnswer: { "@type": "Answer", text: en(f.a) } };
+        })
+      });
+    }
   }
 
   /* ---------- Helpers ---------- */
@@ -282,6 +421,7 @@
       state.categories = (res[1] && res[1].categories) || [];
       state.products = (res[2] && res[2].products) || [];
       setLang(detectLang());
+      injectStructuredData();
     }).catch(function (err) {
       console.error(err);
       var grid = byId("productGrid");

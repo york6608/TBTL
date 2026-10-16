@@ -1,9 +1,20 @@
 {
   "companyName": "TEN BROTHERS TRADING LIMITED",
   "logoText": "TBTL",
+  "url": "https://tbtltz.com",
   "brandColor": "#e2711d",
   "brandColorDark": "#1f3a5f",
   "defaultLang": "en",
+  "seo": {
+    "keywords": {
+      "en": "hardware Tanzania, building materials Dar es Salaam, cement supplier Tanzania, steel rebar, roofing sheets, mabati, plumbing, paint, tools, wholesale construction materials, Ten Brothers Trading",
+      "sw": "hardware Tanzania, vifaa vya ujenzi Dar es Salaam, muuzaji wa saruji, nondo, mabati, mabomba, rangi, zana, vifaa vya ujenzi bei ya jumla, Ten Brothers Trading"
+    },
+    "geo": { "lat": "-6.792354", "lng": "39.208328" },
+    "priceRange": "$$",
+    "foundingYear": "2015",
+    "areaServed": ["Dar es Salaam", "Dodoma", "Arusha", "Mwanza", "Tanzania"]
+  },
   "hero": {
     "title": {
       "en": "Quality Hardware & Building Materials in Tanzania",
@@ -15,10 +26,7 @@
     }
   },
   "about": {
-    "title": {
-      "en": "About Us",
-      "sw": "Kuhusu Sisi"
-    },
+    "title": { "en": "About Us", "sw": "Kuhusu Sisi" },
     "body": {
       "en": "We are a trusted supplier of hardware and building materials based in Tanzania. From foundation to finishing, we stock genuine products for contractors, builders and homeowners at competitive wholesale prices.",
       "sw": "Sisi ni wasambazaji wa kuaminika wa vifaa vya ujenzi na hardware tulioko Tanzania. Kuanzia msingi hadi kumalizia, tunahifadhi bidhaa halisi kwa wakandarasi, wajenzi na wamiliki wa nyumba kwa bei nafuu ya jumla."
@@ -26,58 +34,31 @@
     "highlights": [
       {
         "icon": "shield",
-        "title": {
-          "en": "Genuine Products",
-          "sw": "Bidhaa Halisi"
-        },
-        "text": {
-          "en": "Only authentic, quality-checked materials.",
-          "sw": "Vifaa halisi vilivyokaguliwa ubora tu."
-        }
+        "title": { "en": "Genuine Products", "sw": "Bidhaa Halisi" },
+        "text": { "en": "Only authentic, quality-checked materials.", "sw": "Vifaa halisi vilivyokaguliwa ubora tu." }
       },
       {
         "icon": "tag",
-        "title": {
-          "en": "Wholesale Prices",
-          "sw": "Bei za Jumla"
-        },
-        "text": {
-          "en": "Competitive pricing for projects of any size.",
-          "sw": "Bei nafuu kwa miradi ya ukubwa wowote."
-        }
+        "title": { "en": "Wholesale Prices", "sw": "Bei za Jumla" },
+        "text": { "en": "Competitive pricing for projects of any size.", "sw": "Bei nafuu kwa miradi ya ukubwa wowote." }
       },
       {
         "icon": "truck",
-        "title": {
-          "en": "Fast Delivery",
-          "sw": "Usafirishaji wa Haraka"
-        },
-        "text": {
-          "en": "Delivery across Tanzania, on time.",
-          "sw": "Usafirishaji Tanzania nzima, kwa wakati."
-        }
+        "title": { "en": "Fast Delivery", "sw": "Usafirishaji wa Haraka" },
+        "text": { "en": "Delivery across Tanzania, on time.", "sw": "Usafirishaji Tanzania nzima, kwa wakati." }
       }
     ]
   },
   "products": {
-    "title": {
-      "en": "Our Products",
-      "sw": "Bidhaa Zetu"
-    },
+    "title": { "en": "Our Products", "sw": "Bidhaa Zetu" },
     "subtitle": {
       "en": "Browse our range of building materials and hardware.",
       "sw": "Angalia aina mbalimbali za vifaa vya ujenzi na hardware."
     },
-    "allLabel": {
-      "en": "All",
-      "sw": "Zote"
-    }
+    "allLabel": { "en": "All", "sw": "Zote" }
   },
   "contact": {
-    "title": {
-      "en": "Contact Us",
-      "sw": "Wasiliana Nasi"
-    },
+    "title": { "en": "Contact Us", "sw": "Wasiliana Nasi" },
     "subtitle": {
       "en": "Get a quote or place an order. We are happy to help.",
       "sw": "Pata bei au weka oda. Tuko tayari kukusaidia."
@@ -99,5 +80,49 @@
     "facebook": "",
     "instagram": "",
     "tiktok": ""
-  }
+  },
+  "faq": [
+    {
+      "q": { "en": "What building materials and hardware do you sell?", "sw": "Mnauza vifaa gani vya ujenzi na hardware?" },
+      "a": {
+        "en": "We supply a full range of building materials and hardware in Tanzania, including cement and aggregates, steel and rebar, roofing sheets (mabati), plumbing, electrical, paint and finishing, and tools.",
+        "sw": "Tunasambaza vifaa vyote vya ujenzi na hardware Tanzania: saruji na kokoto, chuma na nondo, mabati, mabomba, umeme, rangi, na zana."
+      }
+    },
+    {
+      "q": { "en": "Where are you located and which areas do you deliver to?", "sw": "Mko wapi na mnasambaza maeneo gani?" },
+      "a": {
+        "en": "We are based in Dar es Salaam, Tanzania, and deliver building materials across the country, including Dodoma, Arusha and Mwanza.",
+        "sw": "Tuko Dar es Salaam, Tanzania, na tunasambaza vifaa vya ujenzi nchini kote, ikiwemo Dodoma, Arusha na Mwanza."
+      }
+    },
+    {
+      "q": { "en": "Do you offer wholesale prices for contractors?", "sw": "Mnatoa bei za jumla kwa wakandarasi?" },
+      "a": {
+        "en": "Yes. We offer competitive wholesale pricing for contractors, builders and large projects. Contact us on WhatsApp for a quote.",
+        "sw": "Ndiyo. Tunatoa bei nafuu za jumla kwa wakandarasi, wajenzi na miradi mikubwa. Wasiliana nasi kwa WhatsApp kupata bei."
+      }
+    },
+    {
+      "q": { "en": "How can I get a price quote or place an order?", "sw": "Nawezaje kupata bei au kuweka oda?" },
+      "a": {
+        "en": "The fastest way is to message us on WhatsApp or call us directly. You can also email us and we will respond quickly.",
+        "sw": "Njia ya haraka ni kututumia ujumbe kwa WhatsApp au kutupigia simu. Pia unaweza kutuma barua pepe na tutajibu haraka."
+      }
+    },
+    {
+      "q": { "en": "What are your opening hours?", "sw": "Saa zenu za kazi ni zipi?" },
+      "a": {
+        "en": "We are open Monday to Saturday, 8:00 AM to 6:00 PM.",
+        "sw": "Tuko wazi Jumatatu hadi Jumamosi, saa 2 asubuhi hadi saa 12 jioni."
+      }
+    },
+    {
+      "q": { "en": "Are your products genuine and good quality?", "sw": "Bidhaa zenu ni halisi na za ubora?" },
+      "a": {
+        "en": "Yes. We stock only genuine, quality-checked building materials from trusted brands so your project lasts.",
+        "sw": "Ndiyo. Tunahifadhi vifaa halisi vilivyokaguliwa ubora kutoka kwa chapa za kuaminika ili mradi wako udumu."
+      }
+    }
+  ]
 }

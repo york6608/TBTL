@@ -35,8 +35,32 @@ collections:
         fields:
           - { label: "Company name", name: "companyName", widget: "string" }
           - { label: "Logo text", name: "logoText", widget: "string" }
+          - { label: "Website URL", name: "url", widget: "string", required: false, default: "https://tbtltz.com" }
           - { label: "Brand color (main)", name: "brandColor", widget: "color", enableAlpha: false, required: false }
           - { label: "Brand color (dark)", name: "brandColorDark", widget: "color", enableAlpha: false, required: false }
+
+          - label: "SEO settings"
+            name: "seo"
+            widget: "object"
+            required: false
+            fields:
+              - label: "Search keywords"
+                name: "keywords"
+                widget: "object"
+                required: false
+                fields:
+                  - { label: "English", name: "en", widget: "text", required: false }
+                  - { label: "Kiswahili", name: "sw", widget: "text", required: false }
+              - label: "Map coordinates"
+                name: "geo"
+                widget: "object"
+                required: false
+                fields:
+                  - { label: "Latitude", name: "lat", widget: "string", required: false }
+                  - { label: "Longitude", name: "lng", widget: "string", required: false }
+              - { label: "Price range (e.g. $$)", name: "priceRange", widget: "string", required: false }
+              - { label: "Founding year", name: "foundingYear", widget: "string", required: false }
+              - { label: "Areas served", name: "areaServed", widget: "list", required: false, default: ["Tanzania"] }
           - label: "Default language"
             name: "defaultLang"
             widget: "select"
@@ -163,6 +187,26 @@ collections:
               - { label: "Facebook URL", name: "facebook", widget: "string", required: false }
               - { label: "Instagram URL", name: "instagram", widget: "string", required: false }
               - { label: "TikTok URL", name: "tiktok", widget: "string", required: false }
+
+          - label: "FAQ (questions & answers)"
+            name: "faq"
+            widget: "list"
+            required: false
+            label_singular: "Question"
+            summary: "{{fields.q.en}}"
+            fields:
+              - label: "Question"
+                name: "q"
+                widget: "object"
+                fields:
+                  - { label: "English", name: "en", widget: "string" }
+                  - { label: "Kiswahili", name: "sw", widget: "string" }
+              - label: "Answer"
+                name: "a"
+                widget: "object"
+                fields:
+                  - { label: "English", name: "en", widget: "text" }
+                  - { label: "Kiswahili", name: "sw", widget: "text" }
 
   # ---------------------------------------------------------
   # 2) Product categories
